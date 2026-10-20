@@ -97,7 +97,7 @@ export function TopBar({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search metrics, orders, SKUs (Ctrl+K)..."
-              className="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-slate-800 placeholder:text-slate-400"
+              className="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#4E71FF]/25 focus:border-[#5409DA] transition-all text-slate-800 placeholder:text-slate-400"
             />
           </div>
         </div>
@@ -114,12 +114,12 @@ export function TopBar({
             aria-label="Notifications"
           >
             <Bell size={18} />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white"></span>
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#4E71FF] ring-2 ring-white"></span>
           </button>
 
           {/* MySQL status badge */}
-          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold text-slate-600 bg-slate-100 rounded-lg border border-slate-200">
-            <Database size={13} className="text-indigo-600" />
+          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 bg-[#BBFBFF]/30 rounded-lg border border-[#8DD8FF]/50">
+            <Database size={13} className="text-[#4E71FF]" />
             <span>MySQL 8.0</span>
           </div>
 
@@ -128,7 +128,7 @@ export function TopBar({
             href="/settings"
             className="flex items-center gap-2 p-1 pl-1.5 pr-2 rounded-lg hover:bg-slate-100 transition-colors group"
           >
-            <div className="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white shadow-2xs">
+            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#5409DA] to-[#4E71FF] flex items-center justify-center text-xs font-bold text-white shadow-xs shadow-[#5409DA]/30 ring-2 ring-[#BBFBFF]/40">
               JD
             </div>
             <span className="text-xs font-semibold text-slate-700 hidden lg:inline">

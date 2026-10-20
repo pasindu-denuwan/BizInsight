@@ -40,11 +40,11 @@ export function DateRangeSelect({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-hidden focus:ring-2 focus:ring-indigo-500/20 shadow-2xs transition-all select-none"
+        className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-hidden focus:ring-2 focus:ring-[#4E71FF]/25 focus:border-[#5409DA] shadow-2xs transition-all select-none"
         aria-haspopup="true"
         aria-expanded={open}
       >
-        <Calendar size={14} className="text-indigo-600" />
+        <Calendar size={14} className="text-[#4E71FF]" />
         <span>{selected}</span>
         <ChevronDown size={14} className="text-slate-400" />
       </button>
@@ -73,12 +73,12 @@ export function DateRangeSelect({
                     className={cn(
                       "w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors",
                       isSelected
-                        ? "text-indigo-600 font-semibold bg-indigo-50/60"
+                        ? "text-[#5409DA] font-semibold bg-[#BBFBFF]/40 border-l-2 border-[#5409DA]"
                         : "text-slate-700 hover:bg-slate-50"
                     )}
                   >
                     <span>{range}</span>
-                    {isSelected && <Check size={14} className="text-indigo-600" />}
+                    {isSelected && <Check size={14} className="text-[#5409DA]" />}
                   </button>
                 );
               })}

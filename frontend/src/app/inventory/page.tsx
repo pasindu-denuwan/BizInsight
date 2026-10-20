@@ -179,7 +179,7 @@ export default function InventoryPage() {
       key: "sku",
       header: "SKU",
       render: (row) => (
-        <span className="font-mono font-medium text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded text-[11px]">
+        <span className="font-mono font-medium text-[#5409DA] bg-[#BBFBFF]/50 border border-[#8DD8FF]/40 px-1.5 py-0.5 rounded text-[11px]">
           {row.sku}
         </span>
       ),
@@ -197,7 +197,7 @@ export default function InventoryPage() {
     { key: "qoh", header: "On Hand", align: "center", render: (r) => <span className="font-bold text-slate-900">{r.qoh}</span> },
     { key: "daily_demand", header: "Daily Velocity", align: "center" },
     { key: "lead_time_days", header: "Lead Time", align: "center", render: (r) => `${r.lead_time_days}d` },
-    { key: "reorder_point", header: "Reorder Pt (ROP)", align: "center", render: (r) => <span className="font-bold text-indigo-600">{r.reorder_point}</span> },
+    { key: "reorder_point", header: "Reorder Pt (ROP)", align: "center", render: (r) => <span className="font-bold text-[#5409DA]">{r.reorder_point}</span> },
     {
       key: "status",
       header: "Status",
@@ -268,7 +268,7 @@ export default function InventoryPage() {
             </button>
             <button
               onClick={() => setAddDrawerOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               <Plus size={14} />
               <span>Add Product</span>
@@ -312,7 +312,7 @@ export default function InventoryPage() {
           onClick={() => setActiveTab("reorder")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px ${
             activeTab === "reorder"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -322,7 +322,7 @@ export default function InventoryPage() {
           onClick={() => setActiveTab("catalog")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px ${
             activeTab === "catalog"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -386,7 +386,7 @@ export default function InventoryPage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Calculated ROP:</span>
-                <span className="font-bold text-indigo-600">{selectedProduct.reorder_point} units</span>
+                <span className="font-bold text-[#5409DA]">{selectedProduct.reorder_point} units</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Stock Deficit:</span>
@@ -397,12 +397,12 @@ export default function InventoryPage() {
             </div>
 
             {/* Explainable ROP Formula breakdown (BR-004) */}
-            <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-100 space-y-2.5">
-              <div className="flex items-center gap-1.5 text-indigo-900 font-bold">
+            <div className="p-4 rounded-xl bg-[#BBFBFF]/30 border border-[#8DD8FF]/40 space-y-2.5">
+              <div className="flex items-center gap-1.5 text-[#5409DA] font-bold">
                 <Calculator size={15} />
                 <span>Explainable Reorder Calculation</span>
               </div>
-              <div className="text-[11px] text-indigo-950 font-mono bg-white/80 p-2 rounded border border-indigo-200/60">
+              <div className="text-[11px] text-slate-800 font-mono bg-white/90 p-2 rounded border border-[#8DD8FF]/30">
                 ROP = ({selectedProduct.daily_demand} demand/day × {selectedProduct.lead_time_days} days) + {selectedProduct.safety_stock} safety stock
                 <br />
                 = {Math.round(selectedProduct.daily_demand * selectedProduct.lead_time_days)} + {selectedProduct.safety_stock} = <strong>{selectedProduct.reorder_point} units</strong>
@@ -448,7 +448,7 @@ export default function InventoryPage() {
             <button
               type="button"
               onClick={handleAddProduct}
-              className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+              className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               Save Product
             </button>

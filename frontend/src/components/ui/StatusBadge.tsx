@@ -55,10 +55,10 @@ export function StatusBadge({
       dot: "bg-slate-400",
     },
     info: {
-      bg: "bg-indigo-50",
-      text: "text-indigo-700",
-      border: "border-indigo-200",
-      dot: "bg-indigo-500",
+      bg: "bg-[#BBFBFF]/50",
+      text: "text-[#5409DA]",
+      border: "border-[#8DD8FF]/60",
+      dot: "bg-[#4E71FF]",
     },
   };
 

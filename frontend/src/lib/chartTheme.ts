@@ -1,22 +1,24 @@
 export const chartTheme = {
   colors: {
-    primary: "#4F46E5",
-    primaryLight: "#818CF8",
-    success: "#16A34A",
+    primary: "#5409DA",       // Color 1: Deep Royal Violet
+    primaryLight: "#4E71FF",  // Color 2: Royal Cobalt Blue
+    accent: "#8DD8FF",        // Color 3: Sky Cyan
+    highlight: "#BBFBFF",     // Color 4: Ice Mint Aqua
+    success: "#10B981",
     warning: "#F59E0B",
-    danger: "#DC2626",
-    muted: "#6B7280",
+    danger: "#EF4444",
+    muted: "#64748B",
     grid: "#F1F5F9",
     axis: "#94A3B8",
   },
   tooltipStyle: {
-    backgroundColor: "#111827",
+    backgroundColor: "#0E0821",
     borderRadius: "8px",
     color: "#FFFFFF",
     fontSize: "12px",
     padding: "8px 12px",
-    border: "1px solid #1F2937",
-    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.2)",
+    border: "1px solid rgba(141, 216, 255, 0.3)",
+    boxShadow: "0 10px 20px -3px rgba(84, 9, 218, 0.3)",
   },
   gridProps: {
     strokeDasharray: "3 3",

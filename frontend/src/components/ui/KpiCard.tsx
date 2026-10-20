@@ -41,8 +41,8 @@ export function KpiCard({
     <div
       onClick={onClick}
       className={cn(
-        "group relative p-5 rounded-xl bg-white border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between select-none",
-        onClick && "cursor-pointer hover:border-indigo-300",
+        "group relative p-5 rounded-xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-[#8DD8FF]/60 hover:shadow-[0_8px_24px_rgba(78,113,255,0.08)] transition-all duration-200 flex flex-col justify-between select-none",
+        onClick && "cursor-pointer hover:border-[#8DD8FF]",
         className
       )}
     >
@@ -50,7 +50,7 @@ export function KpiCard({
       <div className="flex items-start justify-between gap-2 mb-2">
         <div className="flex items-center gap-2 truncate">
           {Icon && (
-            <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#BBFBFF]/40 text-[#5409DA] border border-[#8DD8FF]/40 flex items-center justify-center shrink-0 shadow-xs">
               <Icon size={16} />
             </div>
           )}

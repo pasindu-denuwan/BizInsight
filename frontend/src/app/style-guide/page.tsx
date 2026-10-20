@@ -37,7 +37,7 @@ export default function StyleGuidePage() {
               showToast("Toast feedback triggered successfully!");
               setDrawerOpen(true);
             }}
-            className="px-4 py-2 text-xs font-semibold text-white bg-[#4F46E5] hover:bg-indigo-600 rounded-lg shadow-sm transition-all"
+            className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] rounded-lg shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             Test Drawer & Toast
           </button>
@@ -46,23 +46,28 @@ export default function StyleGuidePage() {
 
       {/* Color Palette Tokens */}
       <section className="p-6 rounded-xl bg-white border border-slate-200 shadow-xs space-y-4">
-        <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
-          Design Token Colors
-        </h2>
+        <div>
+          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+            Signature 4-Color Palette Tokens
+          </h2>
+          <p className="text-xs text-slate-500">
+            System-wide chromatic foundation: Deep Violet, Royal Blue, Sky Cyan, and Ice Mint
+          </p>
+        </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           {[
-            { name: "Primary", hex: "#4F46E5", bg: "bg-[#4F46E5]", text: "text-white" },
-            { name: "Sidebar", hex: "#111827", bg: "bg-[#111827]", text: "text-white" },
-            { name: "Background", hex: "#F8FAFC", bg: "bg-[#F8FAFC]", text: "text-slate-900 border" },
+            { name: "Primary Violet", hex: "#5409DA", bg: "bg-[#5409DA]", text: "text-white" },
+            { name: "Royal Blue", hex: "#4E71FF", bg: "bg-[#4E71FF]", text: "text-white" },
+            { name: "Sky Cyan", hex: "#8DD8FF", bg: "bg-[#8DD8FF]", text: "text-slate-900" },
+            { name: "Ice Mint", hex: "#BBFBFF", bg: "bg-[#BBFBFF]", text: "text-slate-900" },
+            { name: "Midnight Sidebar", hex: "#0E0821", bg: "bg-[#0E0821]", text: "text-white" },
+            { name: "Canvas Tint", hex: "#F8FAFF", bg: "bg-[#F8FAFF]", text: "text-slate-900 border" },
             { name: "Card Surface", hex: "#FFFFFF", bg: "bg-[#FFFFFF]", text: "text-slate-900 border" },
-            { name: "Text", hex: "#1F2937", bg: "bg-[#1F2937]", text: "text-white" },
-            { name: "Muted", hex: "#6B7280", bg: "bg-[#6B7280]", text: "text-white" },
-            { name: "Success", hex: "#16A34A", bg: "bg-[#16A34A]", text: "text-white" },
-            { name: "Danger", hex: "#DC2626", bg: "bg-[#DC2626]", text: "text-white" },
+            { name: "Success Emerald", hex: "#10B981", bg: "bg-[#10B981]", text: "text-white" },
           ].map((c) => (
             <div key={c.name} className="flex flex-col gap-1.5">
               <div
-                className={`h-14 rounded-lg flex items-center justify-center font-mono text-[10px] font-bold ${c.bg} ${c.text}`}
+                className={`h-14 rounded-lg flex items-center justify-center font-mono text-[10px] font-bold ${c.bg} ${c.text} shadow-2xs`}
               >
                 {c.hex}
               </div>
@@ -79,8 +84,11 @@ export default function StyleGuidePage() {
             Button Hierarchy
           </h2>
           <div className="flex flex-wrap gap-2.5">
-            <button className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-xs transition-colors">
-              Primary Button
+            <button className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all">
+              Primary Gradient Button
+            </button>
+            <button className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-[#BBFBFF]/40 text-[#5409DA] hover:bg-[#BBFBFF]/70 border border-[#8DD8FF]/50 transition-colors">
+              Soft Accent Button
             </button>
             <button className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-colors">
               Secondary Button
@@ -160,7 +168,7 @@ export default function StyleGuidePage() {
         footer={
           <button
             onClick={() => setDrawerOpen(false)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             Close Drawer
           </button>

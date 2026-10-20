@@ -61,7 +61,7 @@ export default function DashboardPage() {
       key: "id",
       header: "Order ID",
       render: (row) => (
-        <span className="font-mono font-medium text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded text-[11px]">
+        <span className="font-mono font-medium text-[#5409DA] bg-[#BBFBFF]/50 border border-[#8DD8FF]/40 px-1.5 py-0.5 rounded text-[11px]">
           {row.id}
         </span>
       ),
@@ -113,7 +113,7 @@ export default function DashboardPage() {
             />
             <Link
               href="/reports"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] text-white hover:from-[#4E71FF] hover:to-[#5409DA] shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               <Receipt size={14} />
               <span>Export</span>
@@ -165,7 +165,7 @@ export default function DashboardPage() {
         <div className="flex items-center justify-between px-1">
           <button
             onClick={() => setShowExtendedKpis(!showExtendedKpis)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-700 bg-indigo-50/80 hover:bg-indigo-100/70 px-3 py-1.5 rounded-lg transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5409DA] hover:text-[#4E71FF] bg-[#BBFBFF]/40 hover:bg-[#BBFBFF]/70 border border-[#8DD8FF]/40 px-3 py-1.5 rounded-lg transition-colors"
           >
             <Layers size={14} />
             <span>
@@ -219,12 +219,13 @@ export default function DashboardPage() {
             >
               <defs>
                 <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#4F46E5" stopOpacity={0.25} />
-                  <stop offset="95%" stopColor="#4F46E5" stopOpacity={0} />
+                  <stop offset="0%" stopColor="#5409DA" stopOpacity={0.35} />
+                  <stop offset="60%" stopColor="#4E71FF" stopOpacity={0.15} />
+                  <stop offset="100%" stopColor="#8DD8FF" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="profitGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#16A34A" stopOpacity={0.25} />
-                  <stop offset="95%" stopColor="#16A34A" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#10B981" stopOpacity={0.25} />
+                  <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid {...chartTheme.gridProps} />
@@ -241,7 +242,7 @@ export default function DashboardPage() {
                 type="monotone"
                 name="Net Revenue"
                 dataKey="revenue"
-                stroke="#4F46E5"
+                stroke="#5409DA"
                 strokeWidth={2.5}
                 fillOpacity={1}
                 fill="url(#revGrad)"
@@ -271,6 +272,12 @@ export default function DashboardPage() {
               layout="vertical"
               margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
             >
+              <defs>
+                <linearGradient id="catBarGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#5409DA" />
+                  <stop offset="100%" stopColor="#4E71FF" />
+                </linearGradient>
+              </defs>
               <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#F1F5F9" />
               <XAxis
                 type="number"
@@ -290,7 +297,7 @@ export default function DashboardPage() {
                 contentStyle={chartTheme.tooltipStyle}
                 formatter={(v: any) => [formatCurrency(v), "Revenue"]}
               />
-              <Bar dataKey="revenue" fill="#4F46E5" radius={[0, 6, 6, 0]} />
+              <Bar dataKey="revenue" fill="url(#catBarGrad)" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
@@ -311,7 +318,7 @@ export default function DashboardPage() {
             actions={
               <Link
                 href="/sales"
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+                className="text-xs font-semibold text-[#5409DA] hover:text-[#4E71FF] flex items-center gap-1 transition-colors"
               >
                 <span>View all sales</span>
                 <ArrowRight size={13} />
@@ -334,7 +341,7 @@ export default function DashboardPage() {
               </div>
               <Link
                 href="/insights"
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+                className="text-xs font-semibold text-[#5409DA] hover:text-[#4E71FF] flex items-center gap-1 transition-colors"
               >
                 View All <ArrowRight size={13} />
               </Link>
@@ -358,7 +365,7 @@ export default function DashboardPage() {
         footer={
           <button
             onClick={() => setSelectedOrder(null)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             Done
           </button>
@@ -385,7 +392,7 @@ export default function DashboardPage() {
               </div>
               <div className="flex justify-between border-t border-slate-200 pt-2 text-sm font-bold">
                 <span className="text-slate-900">Total Amount:</span>
-                <span className="text-indigo-600">{formatCurrency(selectedOrder.amount)}</span>
+                <span className="text-[#5409DA]">{formatCurrency(selectedOrder.amount)}</span>
               </div>
             </div>
 

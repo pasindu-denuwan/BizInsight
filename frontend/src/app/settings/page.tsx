@@ -71,7 +71,7 @@ export default function SettingsPage() {
         <button
           onClick={() => setActiveTab("profile")}
           className={`pb-2.5 whitespace-nowrap transition-colors border-b-2 -mb-px flex items-center gap-1.5 ${
-            activeTab === "profile" ? "border-indigo-600 text-indigo-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "profile" ? "border-[#5409DA] text-[#5409DA]" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           <Building2 size={14} />
@@ -81,7 +81,7 @@ export default function SettingsPage() {
         <button
           onClick={() => setActiveTab("account")}
           className={`pb-2.5 whitespace-nowrap transition-colors border-b-2 -mb-px flex items-center gap-1.5 ${
-            activeTab === "account" ? "border-indigo-600 text-indigo-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "account" ? "border-[#5409DA] text-[#5409DA]" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           <User size={14} />
@@ -91,7 +91,7 @@ export default function SettingsPage() {
         <button
           onClick={() => setActiveTab("currency")}
           className={`pb-2.5 whitespace-nowrap transition-colors border-b-2 -mb-px flex items-center gap-1.5 ${
-            activeTab === "currency" ? "border-indigo-600 text-indigo-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "currency" ? "border-[#5409DA] text-[#5409DA]" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           <DollarSign size={14} />
@@ -101,7 +101,7 @@ export default function SettingsPage() {
         <button
           onClick={() => setActiveTab("team")}
           className={`pb-2.5 whitespace-nowrap transition-colors border-b-2 -mb-px flex items-center gap-1.5 ${
-            activeTab === "team" ? "border-indigo-600 text-indigo-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "team" ? "border-[#5409DA] text-[#5409DA]" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           <ShieldCheck size={14} />
@@ -111,7 +111,7 @@ export default function SettingsPage() {
         <button
           onClick={() => setActiveTab("audit")}
           className={`pb-2.5 whitespace-nowrap transition-colors border-b-2 -mb-px flex items-center gap-1.5 ${
-            activeTab === "audit" ? "border-indigo-600 text-indigo-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "audit" ? "border-[#5409DA] text-[#5409DA]" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           <History size={14} />
@@ -159,7 +159,7 @@ export default function SettingsPage() {
           <div className="pt-2">
             <button
               type="submit"
-              className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+              className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               Save Profile Changes
             </button>
@@ -171,7 +171,7 @@ export default function SettingsPage() {
       {activeTab === "account" && (
         <div className="max-w-xl p-6 rounded-xl bg-white border border-slate-200 shadow-xs space-y-5 text-xs">
           <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-            <div className="w-12 h-12 rounded-full bg-indigo-600 text-white font-bold text-base flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5409DA] to-[#4E71FF] text-white font-bold text-base flex items-center justify-center shadow-md shadow-[#5409DA]/30 ring-2 ring-[#BBFBFF]/50">
               JD
             </div>
             <div>
@@ -246,7 +246,7 @@ export default function SettingsPage() {
           <div className="pt-2">
             <button
               type="submit"
-              className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+              className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               Apply Currency Settings
             </button>
@@ -264,7 +264,7 @@ export default function SettingsPage() {
             </div>
             <button
               onClick={() => showToast("Invite link copied to clipboard!")}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               <Plus size={14} />
               <span>Invite Member</span>
@@ -287,7 +287,7 @@ export default function SettingsPage() {
                   <tr key={m.id} className="hover:bg-slate-50">
                     <td className="p-3 font-bold text-slate-800">{m.name}</td>
                     <td className="p-3 text-slate-500">{m.email}</td>
-                    <td className="p-3 font-semibold text-indigo-600">{m.role}</td>
+                    <td className="p-3 font-semibold text-[#5409DA]">{m.role}</td>
                     <td className="p-3"><StatusBadge status={m.status} /></td>
                     <td className="p-3 text-slate-400">{m.joined}</td>
                   </tr>
@@ -321,7 +321,7 @@ export default function SettingsPage() {
               <tbody className="divide-y divide-slate-100">
                 {AUDIT_LOGS.map((log) => (
                   <tr key={log.id} className="hover:bg-slate-50">
-                    <td className="p-3 font-mono text-indigo-600">{log.id}</td>
+                    <td className="p-3 font-mono text-[#5409DA] font-semibold">{log.id}</td>
                     <td className="p-3 font-bold text-slate-800">{log.event}</td>
                     <td className="p-3 text-slate-600">{log.user}</td>
                     <td className="p-3 font-mono text-[11px] text-slate-500">{log.time}</td>

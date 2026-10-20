@@ -54,7 +54,7 @@ export default function ImportPage() {
         actions={
           <Link
             href="/reports"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#BBFBFF]/50 text-[#5409DA] hover:bg-[#BBFBFF]/80 border border-[#8DD8FF]/40 transition-colors"
           >
             <span>View within Reports Center</span>
             <ArrowRight size={13} />
@@ -62,14 +62,14 @@ export default function ImportPage() {
         }
       />
 
-      <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-200 text-xs text-indigo-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+      <div className="p-4 rounded-xl bg-[#BBFBFF]/30 border border-[#8DD8FF]/40 text-xs text-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <UploadCloud size={16} className="text-indigo-600 shrink-0" />
+          <UploadCloud size={16} className="text-[#4E71FF] shrink-0" />
           <span>
             <strong>Progressive Disclosure Note:</strong> In the simplified UI, CSV imports are integrated directly into the <strong>Reports</strong> tab.
           </span>
         </div>
-        <Link href="/reports" className="font-bold text-indigo-600 hover:text-indigo-800 underline">
+        <Link href="/reports" className="font-bold text-[#5409DA] hover:text-[#4E71FF] underline">
           Open Reports & Data Center
         </Link>
       </div>
@@ -80,7 +80,7 @@ export default function ImportPage() {
           <button
             onClick={handleCommit}
             disabled={committed}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-50"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all disabled:opacity-50"
           >
             {committed ? "Committed to Database" : "Commit Valid Rows"}
           </button>
@@ -103,7 +103,7 @@ export default function ImportPage() {
               {PREVIEW_ROWS.map((row) => (
                 <tr key={row.row_num} className={row.status === "error" ? "bg-rose-50/50" : "hover:bg-slate-50"}>
                   <td className="p-2.5 font-mono">{row.row_num}</td>
-                  <td className="p-2.5 font-mono text-indigo-600 font-semibold">{row.sku}</td>
+                  <td className="p-2.5 font-mono text-[#5409DA] font-semibold">{row.sku}</td>
                   <td className="p-2.5 font-medium">{row.name}</td>
                   <td className="p-2.5 text-right">${row.price}</td>
                   <td className="p-2.5 text-right">${row.cost}</td>

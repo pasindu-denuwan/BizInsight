@@ -115,7 +115,7 @@ export default function ReportsPage() {
             </button>
             <button
               onClick={() => showToast("Exporting complete workspace ZIP archive...")}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               <Download size={14} />
               <span>Export All (.ZIP)</span>
@@ -130,7 +130,7 @@ export default function ReportsPage() {
           onClick={() => setActiveTab("reports")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px ${
             activeTab === "reports"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -140,7 +140,7 @@ export default function ReportsPage() {
           onClick={() => setActiveTab("import")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px flex items-center gap-1.5 ${
             activeTab === "import"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -187,7 +187,7 @@ export default function ReportsPage() {
               <div className="flex items-end">
                 <button
                   onClick={handleGenerateReport}
-                  className="w-full py-2 px-3 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs transition-colors"
+                  className="w-full py-2 px-3 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
                 >
                   Generate Statement
                 </button>
@@ -241,10 +241,10 @@ export default function ReportsPage() {
         <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-xs space-y-6">
           {/* Stepper Header */}
           <div className="grid grid-cols-3 gap-2 border-b border-slate-200 pb-4 text-center text-xs">
-            <div className={`p-2 rounded-lg font-bold ${importStep === 1 ? "bg-indigo-50 text-indigo-700" : "text-slate-400"}`}>
+            <div className={`p-2 rounded-lg font-bold ${importStep === 1 ? "bg-[#BBFBFF]/50 text-[#5409DA] border border-[#8DD8FF]/40" : "text-slate-400"}`}>
               1. Upload & Schema
             </div>
-            <div className={`p-2 rounded-lg font-bold ${importStep === 2 ? "bg-indigo-50 text-indigo-700" : "text-slate-400"}`}>
+            <div className={`p-2 rounded-lg font-bold ${importStep === 2 ? "bg-[#BBFBFF]/50 text-[#5409DA] border border-[#8DD8FF]/40" : "text-slate-400"}`}>
               2. Pre-Commit Validation
             </div>
             <div className={`p-2 rounded-lg font-bold ${importStep === 3 ? "bg-emerald-50 text-emerald-700" : "text-slate-400"}`}>
@@ -256,14 +256,14 @@ export default function ReportsPage() {
           {importStep === 1 && (
             <div className="space-y-4">
               <div className="p-8 border-2 border-dashed border-slate-200 rounded-xl text-center bg-slate-50/50 flex flex-col items-center">
-                <UploadCloud size={32} className="text-indigo-600 mb-2" />
+                <UploadCloud size={32} className="text-[#4E71FF] mb-2" />
                 <h4 className="text-sm font-bold text-slate-900 mb-1">Upload CSV Data File</h4>
                 <p className="text-xs text-slate-500 max-w-sm mb-4">
                   Drag and drop your spreadsheet or click to browse. Strict validation will run before anything commits.
                 </p>
                 <button
                   onClick={() => setImportStep(2)}
-                  className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+                  className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
                 >
                   Simulate Upload "products_batch_oct.csv"
                 </button>
@@ -318,7 +318,7 @@ export default function ReportsPage() {
                     {PREVIEW_ROWS.map((row) => (
                       <tr key={row.row_num} className={row.status === "error" ? "bg-rose-50/50" : "hover:bg-slate-50"}>
                         <td className="p-2.5 font-mono">{row.row_num}</td>
-                        <td className="p-2.5 font-mono text-indigo-600 font-semibold">{row.sku}</td>
+                        <td className="p-2.5 font-mono text-[#5409DA] font-semibold">{row.sku}</td>
                         <td className="p-2.5 font-medium">{row.name}</td>
                         <td className="p-2.5 text-right">${row.price}</td>
                         <td className="p-2.5 text-right">${row.cost}</td>
@@ -339,7 +339,7 @@ export default function ReportsPage() {
                 </button>
                 <button
                   onClick={handleCommitImport}
-                  className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+                  className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
                 >
                   Confirm & Commit Valid Rows
                 </button>

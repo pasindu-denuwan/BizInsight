@@ -88,7 +88,7 @@ export default function SalesPage() {
       key: "id",
       header: "Order ID",
       render: (row) => (
-        <span className="font-mono font-medium text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded text-[11px]">
+        <span className="font-mono font-medium text-[#5409DA] bg-[#BBFBFF]/50 border border-[#8DD8FF]/40 px-1.5 py-0.5 rounded text-[11px]">
           {row.id}
         </span>
       ),
@@ -133,12 +133,12 @@ export default function SalesPage() {
               <SlidersHorizontal size={14} className="text-slate-500" />
               <span>Filters</span>
               {(channelFilter !== "all" || statusFilter !== "all") && (
-                <span className="w-2 h-2 rounded-full bg-indigo-600" />
+                <span className="w-2 h-2 rounded-full bg-[#4E71FF]" />
               )}
             </button>
             <button
               onClick={() => showToast("Transactions ledger exported to CSV successfully!")}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 transition-colors shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white transition-all shadow-xs shadow-[#5409DA]/25"
             >
               <Download size={14} />
               <span>Export</span>
@@ -185,8 +185,9 @@ export default function SalesPage() {
           <AreaChart data={QUARTERLY_DATA} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="salesGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#4F46E5" stopOpacity={0.25} />
-                <stop offset="95%" stopColor="#4F46E5" stopOpacity={0} />
+                <stop offset="0%" stopColor="#5409DA" stopOpacity={0.35} />
+                <stop offset="60%" stopColor="#4E71FF" stopOpacity={0.15} />
+                <stop offset="100%" stopColor="#8DD8FF" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid {...chartTheme.gridProps} />
@@ -200,7 +201,7 @@ export default function SalesPage() {
               type="monotone"
               name="Net Revenue"
               dataKey="revenue"
-              stroke="#4F46E5"
+              stroke="#5409DA"
               strokeWidth={2.5}
               fillOpacity={1}
               fill="url(#salesGrad)"
@@ -215,7 +216,7 @@ export default function SalesPage() {
           onClick={() => setActiveTab("ledger")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px ${
             activeTab === "ledger"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -225,7 +226,7 @@ export default function SalesPage() {
           onClick={() => setActiveTab("channels")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px ${
             activeTab === "channels"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -235,7 +236,7 @@ export default function SalesPage() {
           onClick={() => setActiveTab("drilldown")}
           className={`pb-2.5 transition-colors border-b-2 -mb-px ${
             activeTab === "drilldown"
-              ? "border-indigo-600 text-indigo-600"
+              ? "border-[#5409DA] text-[#5409DA]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -267,7 +268,7 @@ export default function SalesPage() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-sm font-bold text-slate-900">{ch.channel}</h4>
-                  <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
+                  <span className="text-xs font-bold text-[#5409DA] bg-[#BBFBFF]/50 px-2 py-0.5 rounded border border-[#8DD8FF]/40">
                     {ch.share}% Share
                   </span>
                 </div>
@@ -324,7 +325,7 @@ export default function SalesPage() {
         footer={
           <button
             onClick={() => setSelectedOrder(null)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             Close Details
           </button>
@@ -367,7 +368,7 @@ export default function SalesPage() {
               </div>
               <div className="flex justify-between border-t border-slate-200 pt-2 text-sm font-bold">
                 <span className="text-slate-900">Total Net Paid:</span>
-                <span className="text-indigo-600">{formatCurrency(selectedOrder.total)}</span>
+                <span className="text-[#5409DA]">{formatCurrency(selectedOrder.total)}</span>
               </div>
             </div>
           </div>
@@ -394,7 +395,7 @@ export default function SalesPage() {
             </button>
             <button
               onClick={() => setFiltersDrawerOpen(false)}
-              className="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500"
+              className="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
             >
               Apply Filters
             </button>

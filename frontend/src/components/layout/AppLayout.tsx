@@ -104,7 +104,7 @@ export function AppLayout({
   }, [router, showToast]);
 
   return (
-    <div className="flex h-screen bg-[#F8FAFC] overflow-hidden text-[#1F2937]">
+    <div className="flex h-screen bg-[#F8FAFF] overflow-hidden text-[#0F172A]">
       {/* Sidebar (Desktop collapsible + Mobile off-canvas) */}
       <Sidebar
         mobileOpen={mobileMenuOpen}
@@ -146,7 +146,7 @@ export function AppLayout({
         footer={
           <button
             onClick={() => setShortcutsModalOpen(false)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             Done
           </button>

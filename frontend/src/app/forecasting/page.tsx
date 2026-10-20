@@ -51,7 +51,7 @@ export default function ForecastingPage() {
         actions={
           <Link
             href="/insights"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#BBFBFF]/50 text-[#5409DA] hover:bg-[#BBFBFF]/80 border border-[#8DD8FF]/40 transition-colors"
           >
             <span>View within Insights</span>
             <ArrowRight size={13} />
@@ -59,14 +59,14 @@ export default function ForecastingPage() {
         }
       />
 
-      <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-200 text-xs text-indigo-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+      <div className="p-4 rounded-xl bg-[#BBFBFF]/30 border border-[#8DD8FF]/40 text-xs text-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <Cpu size={16} className="text-indigo-600 shrink-0" />
+          <Cpu size={16} className="text-[#4E71FF] shrink-0" />
           <span>
             <strong>Progressive Disclosure Note:</strong> In the simplified UI, forecasting is integrated directly into the <strong>Insights</strong> module.
           </span>
         </div>
-        <Link href="/insights" className="font-bold text-indigo-600 hover:text-indigo-800 underline">
+        <Link href="/insights" className="font-bold text-[#5409DA] hover:text-[#4E71FF] underline">
           Open Insights Dashboard
         </Link>
       </div>
@@ -87,7 +87,7 @@ export default function ForecastingPage() {
             />
             <Legend verticalAlign="top" align="right" wrapperStyle={{ fontSize: "11px", paddingBottom: "10px" }} />
             <Line type="monotone" name="Historical Actuals" dataKey="actual" stroke="#111827" strokeWidth={2.5} />
-            <Line type="monotone" name="Forecast Prediction" dataKey="forecast" stroke="#4F46E5" strokeWidth={2.5} strokeDasharray="4 4" />
+            <Line type="monotone" name="Forecast Prediction" dataKey="forecast" stroke="#4E71FF" strokeWidth={2.5} strokeDasharray="4 4" />
           </LineChart>
         </ResponsiveContainer>
       </ChartCard>

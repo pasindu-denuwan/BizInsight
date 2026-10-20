@@ -46,13 +46,13 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               "pointer-events-auto flex items-center justify-between gap-3 p-3.5 rounded-xl shadow-lg border text-xs font-medium animate-slide-in-right transition-all",
               toast.type === "success" && "bg-white border-emerald-200 text-slate-800 shadow-emerald-500/10",
               toast.type === "error" && "bg-white border-rose-200 text-slate-800 shadow-rose-500/10",
-              toast.type === "info" && "bg-white border-indigo-200 text-slate-800 shadow-indigo-500/10"
+              toast.type === "info" && "bg-white border-[#8DD8FF] text-slate-800 shadow-md shadow-[#5409DA]/10"
             )}
           >
             <div className="flex items-center gap-2.5">
               {toast.type === "success" && <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />}
               {toast.type === "error" && <AlertCircle size={16} className="text-rose-600 shrink-0" />}
-              {toast.type === "info" && <Info size={16} className="text-indigo-600 shrink-0" />}
+              {toast.type === "info" && <Info size={16} className="text-[#5409DA] shrink-0" />}
               <span>{toast.message}</span>
             </div>
             <button

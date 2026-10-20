@@ -148,7 +148,7 @@ export default function InsightsPage() {
         actions={
           <button
             onClick={handleRefresh}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             <RefreshCw size={14} />
             <span>Evaluate Rules</span>
@@ -202,7 +202,7 @@ export default function InsightsPage() {
           title="Sales Demand Forecast (3-Month Horizon)"
           subtitle="Holt-Winters exponential smoothing paired with time-ordered holdout validation"
           badge={
-            <span className="text-[10px] font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">
+            <span className="text-[10px] font-semibold text-[#5409DA] bg-[#BBFBFF]/50 px-2 py-0.5 rounded-full border border-[#8DD8FF]/50">
               BR-005 Validated
             </span>
           }
@@ -229,10 +229,10 @@ export default function InsightsPage() {
                 type="monotone"
                 name="Forecast Horizon"
                 dataKey="forecast"
-                stroke="#4F46E5"
+                stroke="#4E71FF"
                 strokeWidth={2.5}
                 strokeDasharray="4 4"
-                dot={{ r: 4, fill: "#4F46E5" }}
+                dot={{ r: 4, fill: "#5409DA", stroke: "#BBFBFF", strokeWidth: 1.5 }}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -245,7 +245,7 @@ export default function InsightsPage() {
             className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
           >
             <div className="flex items-center gap-2">
-              <Cpu size={16} className="text-indigo-600" />
+              <Cpu size={16} className="text-[#4E71FF]" />
               <span className="text-xs font-bold text-slate-900">
                 Show Statistical Forecasting Methodology & Holdout Backtest
               </span>

@@ -111,7 +111,7 @@ export default function CustomersPage() {
       key: "id",
       header: "Customer ID",
       render: (row) => (
-        <span className="font-mono font-medium text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded text-[11px]">
+        <span className="font-mono font-medium text-[#5409DA] bg-[#BBFBFF]/50 border border-[#8DD8FF]/40 px-1.5 py-0.5 rounded text-[11px]">
           {row.id}
         </span>
       ),
@@ -145,7 +145,7 @@ export default function CustomersPage() {
       header: "LTV (Est.)",
       align: "right",
       render: (row) => (
-        <span className="font-semibold text-indigo-600">{formatCurrency(row.ltvEst)}</span>
+        <span className="font-semibold text-[#5409DA]">{formatCurrency(row.ltvEst)}</span>
       ),
     },
     {
@@ -166,7 +166,7 @@ export default function CustomersPage() {
         actions={
           <button
             onClick={() => showToast("Customer profiles and RFM segment matrix exported!")}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-2xs transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             <Download size={14} />
             <span>Export Segments</span>
@@ -231,12 +231,12 @@ export default function CustomersPage() {
                 onClick={() => setSelectedSegment(seg.name)}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   isSelected
-                    ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
+                    ? "bg-gradient-to-br from-[#5409DA] to-[#4E71FF] text-white border-[#5409DA] shadow-md shadow-[#5409DA]/25"
                     : "bg-white text-slate-700 border-slate-200 hover:border-slate-300"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className={`text-[10px] font-bold ${isSelected ? "text-indigo-200" : "text-slate-400"}`}>
+                  <span className={`text-[10px] font-bold ${isSelected ? "text-[#BBFBFF]" : "text-slate-400"}`}>
                     {seg.pct}%
                   </span>
                 </div>
@@ -270,7 +270,7 @@ export default function CustomersPage() {
         footer={
           <button
             onClick={() => setSelectedCustomer(null)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#5409DA] to-[#4E71FF] hover:from-[#4E71FF] hover:to-[#5409DA] text-white shadow-xs shadow-[#5409DA]/25 transition-all"
           >
             Done
           </button>
@@ -279,12 +279,12 @@ export default function CustomersPage() {
         {selectedCustomer && (
           <div className="space-y-5 text-xs">
             {/* Segment status banner */}
-            <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-100 flex items-center justify-between">
+            <div className="p-4 rounded-xl bg-[#BBFBFF]/30 border border-[#8DD8FF]/40 flex items-center justify-between">
               <div>
-                <span className="text-[10px] uppercase font-bold text-indigo-500 tracking-wider block">
+                <span className="text-[10px] uppercase font-bold text-[#5409DA] tracking-wider block">
                   Assigned Segment
                 </span>
-                <span className="text-sm font-bold text-indigo-950">{selectedCustomer.segment}</span>
+                <span className="text-sm font-bold text-slate-900">{selectedCustomer.segment}</span>
               </div>
               <StatusBadge status={selectedCustomer.segment} />
             </div>
@@ -297,15 +297,15 @@ export default function CustomersPage() {
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
                   <span className="text-slate-400 block text-[10px]">Recency (R)</span>
-                  <span className="text-lg font-bold text-indigo-600">{selectedCustomer.rScore}/5</span>
+                  <span className="text-lg font-bold text-[#5409DA]">{selectedCustomer.rScore}/5</span>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
                   <span className="text-slate-400 block text-[10px]">Frequency (F)</span>
-                  <span className="text-lg font-bold text-indigo-600">{selectedCustomer.fScore}/5</span>
+                  <span className="text-lg font-bold text-[#5409DA]">{selectedCustomer.fScore}/5</span>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
                   <span className="text-slate-400 block text-[10px]">Monetary (M)</span>
-                  <span className="text-lg font-bold text-indigo-600">{selectedCustomer.mScore}/5</span>
+                  <span className="text-lg font-bold text-[#5409DA]">{selectedCustomer.mScore}/5</span>
                 </div>
               </div>
             </div>
@@ -322,7 +322,7 @@ export default function CustomersPage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Estimated LTV:</span>
-                <span className="font-bold text-indigo-600">{formatCurrency(selectedCustomer.ltvEst)} (Est.)</span>
+                <span className="font-bold text-[#5409DA]">{formatCurrency(selectedCustomer.ltvEst)} (Est.)</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Last Purchase Recency:</span>

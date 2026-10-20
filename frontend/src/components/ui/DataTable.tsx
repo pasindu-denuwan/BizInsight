@@ -134,7 +134,7 @@ export function DataTable<T extends Record<string, any>>({
                 setCurrentPage(1);
               }}
               placeholder={searchPlaceholder}
-              className="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-slate-800 placeholder:text-slate-400"
+              className="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#4E71FF]/25 focus:border-[#5409DA] transition-all text-slate-800 placeholder:text-slate-400"
             />
           </div>
         </div>
@@ -175,9 +175,9 @@ export function DataTable<T extends Record<string, any>>({
                       <span className="text-slate-400">
                         {sortKey === col.key ? (
                           sortDirection === "asc" ? (
-                            <ArrowUp size={12} className="text-indigo-600" />
+                            <ArrowUp size={12} className="text-[#5409DA]" />
                           ) : (
-                            <ArrowDown size={12} className="text-indigo-600" />
+                            <ArrowDown size={12} className="text-[#5409DA]" />
                           )
                         ) : (
                           <ArrowUpDown size={12} className="opacity-40" />
@@ -197,7 +197,7 @@ export function DataTable<T extends Record<string, any>>({
                   key={row.id || idx}
                   onClick={() => onRowClick?.(row)}
                   className={cn(
-                    "transition-colors duration-150 hover:bg-slate-50/80",
+                    "transition-colors duration-150 hover:bg-[#BBFBFF]/15",
                     onRowClick && "cursor-pointer"
                   )}
                 >

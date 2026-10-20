@@ -74,7 +74,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
       {/* Sidebar Container */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex flex-col bg-[#111827] text-white transition-all duration-300 border-r border-slate-800 shrink-0 select-none",
+          "fixed inset-y-0 left-0 z-50 flex flex-col bg-[#0e0821] text-white transition-all duration-300 border-r border-[#1e133d] shrink-0 select-none",
           // Desktop positioning
           "lg:static lg:translate-x-0",
           // Mobile responsive slide-in
@@ -84,20 +84,20 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
         )}
       >
         {/* Brand Header */}
-        <div className="h-16 flex items-center justify-between px-4 border-b border-slate-800">
+        <div className="h-16 flex items-center justify-between px-4 border-b border-[#1e133d]">
           <Link
             href="/"
             className="flex items-center gap-3 overflow-hidden group"
             onClick={onMobileClose}
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20 text-lg shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#5409DA] via-[#4E71FF] to-[#8DD8FF] flex items-center justify-center font-bold text-white shadow-md shadow-[#5409DA]/35 text-lg shrink-0 group-hover:scale-105 transition-transform ring-1 ring-[#BBFBFF]/30">
               B
             </div>
             {(!collapsed || mobileOpen) && (
               <div className="flex flex-col truncate">
                 <span className="font-bold text-sm tracking-tight text-white flex items-center gap-1.5">
                   BizInsight
-                  <span className="text-[10px] font-semibold bg-indigo-500/20 text-indigo-300 px-1.5 py-0.5 rounded border border-indigo-500/30">
+                  <span className="text-[10px] font-semibold bg-[#5409DA]/30 text-[#BBFBFF] px-1.5 py-0.5 rounded border border-[#8DD8FF]/40">
                     CORE
                   </span>
                 </span>
@@ -109,7 +109,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
           {/* Desktop Collapse Toggle */}
           <button
             onClick={toggleCollapsed}
-            className="hidden lg:flex p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="hidden lg:flex p-1.5 rounded-lg text-slate-400 hover:text-[#BBFBFF] hover:bg-[#1a113d] transition-colors"
             title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
@@ -119,7 +119,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
           {/* Mobile Close Button */}
           <button
             onClick={onMobileClose}
-            className="flex lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="flex lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#1a113d] transition-colors"
             aria-label="Close sidebar"
           >
             <X size={18} />
@@ -127,12 +127,12 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
         </div>
 
         {/* Workspace Indicator */}
-        <div className="p-3 border-b border-slate-800/80">
-          <div className="p-2 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
-            <Building2 size={16} className="text-indigo-400 shrink-0 ml-1" />
+        <div className="p-3 border-b border-[#1e133d]">
+          <div className="p-2 rounded-xl bg-[#150d30] border border-[#261754] flex items-center gap-2.5">
+            <Building2 size={16} className="text-[#8DD8FF] shrink-0 ml-1" />
             {(!collapsed || mobileOpen) && (
               <div className="flex flex-col truncate flex-1">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-[#8DD8FF]/80">
                   Workspace
                 </span>
                 <span className="text-xs font-semibold text-slate-200 truncate">
@@ -159,17 +159,17 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
                 onClick={onMobileClose}
                 title={collapsed && !mobileOpen ? item.label : undefined}
                 className={cn(
-                  "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-xs transition-all duration-150 group",
+                  "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-xs transition-all duration-150 group relative overflow-hidden",
                   isActive
-                    ? "bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/25"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800/70"
+                    ? "bg-gradient-to-r from-[#5409DA] to-[#4E71FF] text-white font-semibold shadow-md shadow-[#5409DA]/35 border-l-2 border-[#BBFBFF]"
+                    : "text-slate-400 hover:text-white hover:bg-[#191038]/80"
                 )}
               >
                 <Icon
                   size={18}
                   className={cn(
                     "shrink-0 transition-colors",
-                    isActive ? "text-white" : "text-slate-400 group-hover:text-white"
+                    isActive ? "text-[#BBFBFF]" : "text-slate-400 group-hover:text-[#8DD8FF]"
                   )}
                 />
                 {(!collapsed || mobileOpen) && (
@@ -181,7 +181,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
         </nav>
 
         {/* Pinned Bottom: Settings & Profile */}
-        <div className="p-3 border-t border-slate-800 space-y-2">
+        <div className="p-3 border-t border-[#1e133d] space-y-2">
           {/* Settings link */}
           <Link
             href="/settings"
@@ -190,8 +190,8 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
             className={cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-xs transition-all duration-150",
               pathname.startsWith("/settings")
-                ? "bg-slate-800 text-white font-semibold"
-                : "text-slate-400 hover:text-white hover:bg-slate-800/70"
+                ? "bg-[#1d1240] text-white font-semibold border-l-2 border-[#8DD8FF]"
+                : "text-slate-400 hover:text-white hover:bg-[#191038]/80"
             )}
           >
             <Settings size={18} className="shrink-0" />
@@ -199,14 +199,14 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
           </Link>
 
           {/* Profile Card */}
-          <div className="flex items-center gap-3 p-2 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div className="w-8 h-8 rounded-full bg-indigo-900/60 border border-indigo-500/30 flex items-center justify-center text-xs font-bold text-indigo-200 shrink-0">
+          <div className="flex items-center gap-3 p-2 rounded-xl bg-[#150d30] border border-[#261754]">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#5409DA] to-[#4E71FF] border border-[#8DD8FF]/40 flex items-center justify-center text-xs font-bold text-[#BBFBFF] shrink-0 shadow-xs shadow-[#5409DA]/30">
               JD
             </div>
             {(!collapsed || mobileOpen) && (
               <div className="flex flex-col truncate flex-1">
                 <span className="text-xs font-semibold text-white truncate">Jane Doe</span>
-                <span className="text-[10px] text-emerald-400 font-medium">Owner / Admin</span>
+                <span className="text-[10px] text-[#BBFBFF] font-medium">Owner / Admin</span>
               </div>
             )}
           </div>

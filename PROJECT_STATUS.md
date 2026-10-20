@@ -68,7 +68,7 @@ _Last Updated: 2026-10-15_
 
 ## 6. UI Simplification & Desktop Software Redesign ✅
 - [x] **Phase 0 Audit & Feature Inventory:** Completed (`docs/UI_SIMPLIFICATION_AUDIT.md`).
-- [x] **Phase 1 Design Foundation:** Tokens configured in `globals.css` (`#4F46E5`, `#111827`, `#F8FAFC`, `#FFFFFF`, `#1F2937`, `#6B7280`, `#16A34A`, `#DC2626`). Style guide page built at `/style-guide`.
+- [x] **Phase 1 Design Foundation:** Tokens configured in `globals.css` with signature 4-color palette (`#5409DA` Deep Violet, `#4E71FF` Royal Blue, `#8DD8FF` Sky Cyan, `#BBFBFF` Ice Mint; `#0E0821` Sidebar, `#F8FAFF` Canvas Tint). Style guide page built at `/style-guide`.
 - [x] **Phase 2 Reusable Component Library:** `AppLayout`, `Sidebar`, `TopBar`, `PageHeader`, `KpiCard`, `ChartCard`, `DataTable`, `StatusBadge`, `DateRangeSelect`, `InsightCard`, `SideDrawer`, `FeedbackStates`, `ToastProvider`.
 - [x] **Phase 3 Desktop Shell & Navigation:** 6 core items (Dashboard, Sales, Customers, Inventory, Insights, Reports) with Settings/Profile pinned bottom. Desktop keyboard shortcuts (`Ctrl+1..6`, `Ctrl+,`, `Ctrl+F`, `Ctrl+E`, `Ctrl+P`, `Ctrl+/`), window state persistence, single-instance lock.
 - [x] **Phase 4 Dashboard Redesign:** 4 primary KPI cards (Revenue, Expenses, Profit, Sales), 2 responsive charts, Recent Sales table (row-click `SideDrawer`), Top 3 Insights, and progressive disclosure for all 12 KPIs.
